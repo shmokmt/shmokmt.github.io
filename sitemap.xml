@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sh-tech.work/tags/hugo/</loc>
+    <lastmod>2019-12-08T00:58:06+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sh-tech.work/post/2019/12/hugo/</loc>
     <lastmod>2019-12-08T00:58:06+09:00</lastmod>
   </url>
@@ -18,17 +23,22 @@
   </url>
   
   <url>
+    <loc>https://sh-tech.work/tags/site-generator/</loc>
+    <lastmod>2019-12-08T00:58:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sh-tech.work/tags/</loc>
+    <lastmod>2019-12-08T00:58:06+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sh-tech.work/tags/code/</loc>
     <lastmod>2019-06-07T03:48:04+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://sh-tech.work/tags/readable/</loc>
-    <lastmod>2019-06-07T03:48:04+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sh-tech.work/tags/</loc>
     <lastmod>2019-06-07T03:48:04+09:00</lastmod>
   </url>
   
