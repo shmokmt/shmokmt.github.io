@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webapi on shmokmt.github.io</title>
+    <link>https://sh-tech.work/tags/webapi/</link>
+    <description>Recent content in webapi on shmokmt.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 03 Jun 2019 03:48:04 +0900</lastBuildDate>
+    
+	<atom:link href="https://sh-tech.work/tags/webapi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Web APIにおけるデータフォーマットの指定方法</title>
+      <link>https://sh-tech.work/post/2019/06/webapi/</link>
+      <pubDate>Mon, 03 Jun 2019 03:48:04 +0900</pubDate>
+      
+      <guid>https://sh-tech.work/post/2019/06/webapi/</guid>
+      <description>Web API The Good Partsを読んだ。
+業務でWeb APIを設計および実装をしたことがほとんどないので、学びが非常に多かった。
+個人的に大事だと思ったところを備忘録のため書き記す。
+データフォーマットの指定方法 APIのフォーマットはJSONがデファクトスタンダードであるが、XMLもサポートしたい場合などは クライアントにどのように取得したい形式を指定させるべきか考える。
+一般的に以下の方法が使われている。
+ クエリパラメータを使う方法 拡張子を使う方法 リクエストヘッダでメディアタイプを指定する方法  1つ目のクエリパラメータを使う方法は以下のようにして、jsonやxmlといったデータ形式を指定する方法である。
+https://api.example.com/v1/users?format=xml
+2つ目は拡張子を使う方法で、ファイルに拡張子をつけるのと同じようにURIの最後に.jsonや.xmlをつけてデータ形式を指定するものである。
+https://api.example.com/v1/users.json
+3つ目はAcceptというリクエストヘッダを使う方法である。Acceptは受け取りたいメディアタイプを指定するための HTTPヘッダで、データ形式を指定することで「この形式でデータを受け取りたい」ということをサーバに対して伝えることができる。
+どれを使えば良いのか HTTPの仕様を最大限に活用する場合はリクエストヘッダで指定する場合が理想的であるが、やや敷居が高いという問題がある。 多くのサービスはクエリパラメータで取得することが多い。 本書でもクエリパラメータで取得することを推奨している。
+なるほど。本書の残りの後半部分であるキャッシュやステータスコードの章はまだ読んでないので、今から読む。</description>
+    </item>
+    
+  </channel>
+</rss>

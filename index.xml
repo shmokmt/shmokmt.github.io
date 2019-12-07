@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shmokmt.github.io</title>
+    <link>https://sh-tech.work/</link>
+    <description>Recent content on shmokmt.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Fri, 07 Jun 2019 03:48:04 +0900</lastBuildDate>
+    
+	<atom:link href="https://sh-tech.work/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>コメントを書くときに気をつけたいこと</title>
+      <link>https://sh-tech.work/post/2019/06/readable-code/</link>
+      <pubDate>Fri, 07 Jun 2019 03:48:04 +0900</pubDate>
+      
+      <guid>https://sh-tech.work/post/2019/06/readable-code/</guid>
+      <description>リーダブルコードを読んだ。 確か、この本は1年半ほど前に購入してサラっと読んで それっきり読んでなかった。
+久しぶりにちゃんと読み返してみた。
+コードは他の人が最短時間で理解できるように書かなければいけない。 たとえ自分ひとりのプロジェクトだったとしても、「他の人」は自分のコードに見覚えのない6ヶ月後の「自分自身」であるかもしれない。
+小さいことがいいこととは必ずしも限らない コードは短くしたほうがいい。だけど、理解する時間を短くするほうが大切。
+コメントは自分の考えを記録する 自明であることをコメントとして書く必要はない。
+本書では例として以下のように取り上げられている。
+// このクラスは汚くなっている // サブクラス `ResouceNode` を作って整理したほうが良いかも これをより使い分けるためには
+TODO:　（あとでやる） FIXME:　（既知の不具合があるコード） HACK: （あまりキレイじゃない解決策） XXX:　（危険 / 問題がある） などを使う。
+定数にコメントをつける NUM_THREADS = 8 # 値は「&amp;gt;=2 * num_processors」で十分 というコメントがあれば定数が決まった背景が理解でき、 これ以上調整する必要がないことがわかる。
+新しいチームのメンバーの気持ちになる 新しいチームメンバーにとって最も難しいのは「全体像」の理解である。 クラスはどのように連携しているのか。デーアはどのように流れているのか。
+例えば以下のような会話があったとする。
+「このクラスは複雑だが、単なるキャッシュです」
+これはソースコードを読んだだけでは得られない情報である。 本書はこれをコメントとして書くことを推奨している。
+私自身は小さなプロジェクトであればREADMEなどに ディレクトリ構造（tree）を図示するなどし、簡潔な説明を付け加えるなどでも良いと思う。
+標準のライブラリを知る 標準のライブラリを知らないがために 自分でスクラッチで実装してしまうことも少なくない。 少ない行かつ簡潔でわかりやすいならそちらを優先する。
+リストから重複する値を削除したいとする。 その場合は関数を作るよりもPythonのSet（集合）を使ったほうが 容易に実装できる。
+テストコードを読みやすくする 大切な情報は目立つようにし、そうでない情報はユーザから隠す。
+具体的にはヘルパー関数を作ったりする。
+テストの本質は「こういう状況でこういう入力からこういう振る舞いと出力を期待する」というレベルまで要約できることである。さらに、これは少ない行で簡潔に表現できることが多い。
+まとめ コメントにはWhatではなく、Whyを書くべきである。
+設計のミスに気づくのはテストコードを書くことがやはり大切。</description>
+    </item>
+    
+    <item>
+      <title>Web APIにおけるデータフォーマットの指定方法</title>
+      <link>https://sh-tech.work/post/2019/06/webapi/</link>
+      <pubDate>Mon, 03 Jun 2019 03:48:04 +0900</pubDate>
+      
+      <guid>https://sh-tech.work/post/2019/06/webapi/</guid>
+      <description>Web API The Good Partsを読んだ。
+業務でWeb APIを設計および実装をしたことがほとんどないので、学びが非常に多かった。
+個人的に大事だと思ったところを備忘録のため書き記す。
+データフォーマットの指定方法 APIのフォーマットはJSONがデファクトスタンダードであるが、XMLもサポートしたい場合などは クライアントにどのように取得したい形式を指定させるべきか考える。
+一般的に以下の方法が使われている。
+ クエリパラメータを使う方法 拡張子を使う方法 リクエストヘッダでメディアタイプを指定する方法  1つ目のクエリパラメータを使う方法は以下のようにして、jsonやxmlといったデータ形式を指定する方法である。
+https://api.example.com/v1/users?format=xml
+2つ目は拡張子を使う方法で、ファイルに拡張子をつけるのと同じようにURIの最後に.jsonや.xmlをつけてデータ形式を指定するものである。
+https://api.example.com/v1/users.json
+3つ目はAcceptというリクエストヘッダを使う方法である。Acceptは受け取りたいメディアタイプを指定するための HTTPヘッダで、データ形式を指定することで「この形式でデータを受け取りたい」ということをサーバに対して伝えることができる。
+どれを使えば良いのか HTTPの仕様を最大限に活用する場合はリクエストヘッダで指定する場合が理想的であるが、やや敷居が高いという問題がある。 多くのサービスはクエリパラメータで取得することが多い。 本書でもクエリパラメータで取得することを推奨している。
+なるほど。本書の残りの後半部分であるキャッシュやステータスコードの章はまだ読んでないので、今から読む。</description>
+    </item>
+    
+    <item>
+      <title>任意のJDKをHomebrew経由でインストールする</title>
+      <link>https://sh-tech.work/post/2019/04/jdk/</link>
+      <pubDate>Fri, 05 Apr 2019 03:48:04 +0900</pubDate>
+      
+      <guid>https://sh-tech.work/post/2019/04/jdk/</guid>
+      <description>はじめに macOSに任意のJDKをインストールしたい。
+TL;DR   複数のプロジェクトで異なるバージョンを使用するときはjEnvが良さげ。
+  単一のJavaのプロジェクトしか扱わない場合は homebrew で versions をtapする。
+  こちらに関しては以下のリンクが参考になる。 【Mac】HomebrewでJavaをインストールする - Reasonable Code homebrew-versionsはその名の通り、バージョンを指定してインストールする拡張機能である。
+$ brew tap caskroom/versions
+その後、以下をjavaをsearchしてみる。
+$ brew search java ==&amp;gt; Formulae app-engine-java google-java-format javarepl jslint4java libreadline-java ==&amp;gt; Casks charles-applejava java ✔ java6 oracle-jdk-javadoc charles-applejava java ✔ java8 oracle-jdk-javadoc eclipse-java java-beta java8 yourkit-java-profiler eclipse-java java-beta netbeans-java-ee yourkit-java-profiler eclipse-javascript java11 netbeans-java-ee eclipse-javascript java11 netbeans-java-se font-noto-sans-javanese java6 netbeans-java-se ※ここでtapした拡張機能は /usr/local/Homebrew/Library/Taps に存在する。
+❯ ls /usr/local/Homebrew/Library/Taps caskroom	homebrew	sachaos	yusukehosonuma heroku	rcmdnk	sanemat /usr/libexec caskでJDKをインストールした後はインストールされた場所を調べる。</description>
+    </item>
+    
+    <item>
+      <title>フラー株式会社に入社しました</title>
+      <link>https://sh-tech.work/post/2019/04/fuller/</link>
+      <pubDate>Mon, 01 Apr 2019 03:48:04 +0900</pubDate>
+      
+      <guid>https://sh-tech.work/post/2019/04/fuller/</guid>
+      <description>はじめに フラー株式会社に入社しました。
+   引用 フラー株式会社 コーポレートサイト
+ 経緯/入社の決めて 入社の決め手はオフィスで楽しそうに働いている自分が容易に想像できたことです。
+職種はソフトウェアエンジニアです。
+おわりに やっていくぞという気持ちです。 どうぞよろしくお願いします。</description>
+    </item>
+    
+    <item>
+      <title>flamingo</title>
+      <link>https://sh-tech.work/post/2018/11/flamingo/</link>
+      <pubDate>Mon, 12 Nov 2018 03:48:04 +0900</pubDate>
+      
+      <guid>https://sh-tech.work/post/2018/11/flamingo/</guid>
+      <description>はじめに 「flamingo」は米津玄師の9th Singleである。リリース前に幕張メッセで[米津玄師 LIVE2018 / flamingo]が開催されて、4万人を動員している。
+01.flamingo  男性が想い焦がれる女性に振られた表現した一曲 沖縄の民謡である「島唄」を意識して作曲されている。  02.TEENAGE RIOT  彼自身が中学生のときに作曲したものである。（厳密には多少のリメイクが施されているらしい。） くすぶっている若者の葛藤した気持ちがスピード感のあるメロディーにのせられている。 Bassを日向秀和が担当している。 PVもロックバンドテイストに仕上がっている。  03.ごめんね  大切にしている人への愛情が根底にある一曲。  「祈る声は激しく」から現実は無情であり、理想とはかけ離れている状況が伺える。   ゲーム「UNDERTALE」をきっかけに制作された。  「誰も死ななくていいやさしいRPG」    おわりに 先日、幕張メッセのライブに参加したけどすごくよかった。 また行きたい。
+   出典：Flamingo / TEENAGE RIOT | 米津玄師 official site「REISSUE RECORDS」 sh-tech</description>
+    </item>
+    
+  </channel>
+</rss>
