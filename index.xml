@@ -6,10 +6,28 @@
     <description>Recent content on shmokmt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 07 Jun 2019 03:48:04 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 00:58:06 +0900</lastBuildDate>
     
 	<atom:link href="https://sh-tech.work/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo 0.57.0 でPostsのみ表示される件</title>
+      <link>https://sh-tech.work/post/2019/12/hugo/</link>
+      <pubDate>Sun, 08 Dec 2019 00:58:06 +0900</pubDate>
+      
+      <guid>https://sh-tech.work/post/2019/12/hugo/</guid>
+      <description>Hugoのレイアウトが崩れた このブログはHugoで書いているが、突然トップページにPostsのみが表示されるようになってしまいコンテンツを正しくリストアップできなくなってしまった。
+Hugo使い方忘れた
+これを機会にGatsbyにして
+自作テーマ0から作ろうかな
+&amp;mdash; shmokmt (@shmokmt) December 7, 2019  だいぶ長いこと記事を書いていなかったので、自分がHugoの使い方を忘れてしまったんじゃないかと思った。
+実際はそんなことはなく、 Hugo 0.57.0 からの仕様変更だった。
+詳細は以下のRelease Note と issue に記載されてある。
+  This made it easy to list all the pages on home page, but it also meant that you needed to take special care if you wanted to navigate the page tree from top to bottom. If you need all regular pages, use .Site.RegularPages
+ とてもつらい（画像略
+ 解決方法  自分の場合は現象が上記とまったく同じだったので、.</description>
+    </item>
     
     <item>
       <title>コメントを書くときに気をつけたいこと</title>
