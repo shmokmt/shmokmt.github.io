@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on shmokmt.github.io</title>
+    <title>Posts on shmokmt</title>
     <link>https://sh-tech.work/post/</link>
-    <description>Recent content in Posts on shmokmt.github.io</description>
+    <description>Recent content in Posts on shmokmt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 07 Jun 2019 03:48:04 +0900</lastBuildDate>
@@ -83,7 +83,6 @@ $ brew search java ==&amp;gt; Formulae app-engine-java google-java-format javare
       
       <guid>https://sh-tech.work/post/2019/04/fuller/</guid>
       <description>はじめに フラー株式会社に入社しました。
-   引用 フラー株式会社 コーポレートサイト
  経緯/入社の決めて 入社の決め手はオフィスで楽しそうに働いている自分が容易に想像できたことです。
 職種はソフトウェアエンジニアです。
 おわりに やっていくぞという気持ちです。 どうぞよろしくお願いします。</description>
@@ -97,7 +96,7 @@ $ brew search java ==&amp;gt; Formulae app-engine-java google-java-format javare
       <guid>https://sh-tech.work/post/2018/11/flamingo/</guid>
       <description>はじめに 「flamingo」は米津玄師の9th Singleである。リリース前に幕張メッセで[米津玄師 LIVE2018 / flamingo]が開催されて、4万人を動員している。
 01.flamingo  男性が想い焦がれる女性に振られた表現した一曲 沖縄の民謡である「島唄」を意識して作曲されている。  02.TEENAGE RIOT  彼自身が中学生のときに作曲したものである。（厳密には多少のリメイクが施されているらしい。） くすぶっている若者の葛藤した気持ちがスピード感のあるメロディーにのせられている。 Bassを日向秀和が担当している。 PVもロックバンドテイストに仕上がっている。  03.ごめんね  大切にしている人への愛情が根底にある一曲。  「祈る声は激しく」から現実は無情であり、理想とはかけ離れている状況が伺える。   ゲーム「UNDERTALE」をきっかけに制作された。  「誰も死ななくていいやさしいRPG」    おわりに 先日、幕張メッセのライブに参加したけどすごくよかった。 また行きたい。
-   出典：Flamingo / TEENAGE RIOT | 米津玄師 official site「REISSUE RECORDS」 sh-tech</description>
+   出典：Flamingo / TEENAGE RIOT | 米津玄師 official site「REISSUE RECORDS」 </description>
     </item>
     
   </channel>
