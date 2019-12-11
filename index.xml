@@ -6,10 +6,27 @@
     <description>Recent content on shmokmt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 08 Dec 2019 00:58:06 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Dec 2019 23:00:52 +0900</lastBuildDate>
     
 	<atom:link href="https://sh-tech.work/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>POSIX/GNUから学ぶコマンドラインオプションの設計</title>
+      <link>https://sh-tech.work/post/2019/12/cli-design/</link>
+      <pubDate>Mon, 09 Dec 2019 23:00:52 +0900</pubDate>
+      
+      <guid>https://sh-tech.work/post/2019/12/cli-design/</guid>
+      <description>※この記事はフラーAdvent Calendar 2019の12日目です。
+※11日目は@okuzawatsさんでフラー株式会社でもバグバッシュ大会をやってみたでした。
+はじめに 私は業務効率化のためのCLIを実装することが多い。 いざ実装して使ってみたら直感的に操作しにくいあるいは、理解しにくいなと思うことが度々ある。
+そこで今回はコマンドラインのオプションについて調べてみた。
+POSIX POSIX とは Portable operating system interface の略であり、異なるOS間で移植性に優れたソフトウェアを開発するための規格である。
+POSIXの規格についてはUtility Conventionsが参考になる。
+GNU POSIXに対し、GNUでも独自の規格が定められている。
+ここで大事なのは、 GNU規格はPOSIX規格を拡張したものであるということである。実際に、Standards for Command Line Interfacesでも
+ It is a good idea to follow the POSIX guidelines for the command-line options of a program. The easiest way to do this is to use getopt to parse them. Note that the GNU version of getopt will normally permit options anywhere among the arguments unless the special argument ‘&amp;ndash;’ is used.</description>
+    </item>
     
     <item>
       <title>Hugo 0.57.0 でPostsのみ表示される件</title>
