@@ -99,12 +99,12 @@ GNU POSIXに対し、GNUでも独自の規格が定められている。
 <span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-s</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">--string-to-echo</span><span style="color:#e6db74">&#39;</span>)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">echo</span>(string_to_echo):
     click<span style="color:#f92672">.</span>echo(string_to_echo)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$  hello --s okasho
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$  hello -s okasho
 okasho
 </code></pre></div><p>※short option は利便性を高めるためのものである。したがって、<code>--dry-run</code>, <code>--force</code> など破壊的な操作を伴うものはshort option を用意しないほうがベターであると個人的に思っている。</p>
 <p>GNU製のコマンドの long option に対してどのような short option が設定されているかは<a href="https://www.gnu.org/prep/standards/html_node/Option-Table.html#Option-Table">Table of Long Options</a>が参考になる。</p>
 <h2 id="basic-value-options">basic value options</h2>
-<p>オプションは値を持つことができる。値を持たせるときに主に以下について考えると良い。</p>
+<p>オプションには値を持たせることができる。値を持たせるときに主に以下について考えると良い。</p>
 <ul>
 <li>適切なデフォルト値</li>
 <li>必須オプションかどうか</li>
