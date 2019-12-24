@@ -6,10 +6,31 @@
     <description>Recent content in Posts on shmokmt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 11 Dec 2019 22:00:52 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://sh-tech.work/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DevFest2019 参加レポート</title>
+      <link>https://sh-tech.work/post/2019/12/devfest2019/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh-tech.work/post/2019/12/devfest2019/</guid>
+      <description>はじめに ※この記事はフラー Advent Calendar 2019 の24日目の記事です。23日は@RyotaMurohoshi さんの TypeScriptでnoImplicitAnyを導入するために、妥協してsuppressImplicitAnyIndexErrorsを導入する でした。
+先日、GDG Tokyo が開催する DevFest2019 に参加した。
+自分は業務で使っていないけれど弊社で使っている技術スタックのセッションがそれなりにあったので、興味本位で参加してみた。
+ 聴講したセッション 岩尾 エマ はるか / 円周率世界記録への道 彼女自身がどのようにエンジニアのキャリアを形成し、円周率の世界記録を更新したかについての話だった。
+彼女が中学生の頃に書いたオセロゲームのコードの変数名が適切でなかったエピソードなども面白かった。 （当時、英単語がわからなかったので、オセロの枠の変数名を border などではなく、waku で宣言していたようだ。）
+Life with open mind これは彼女のブログであるが、Linux Kernel に強い興味を示しており、彼女自身の技術に対する探究心が伺える。
+太田 満久 / TensorFlow の使い方 〜 TF2.x とエコシステム 〜 自分はTensorFlowに関しては一度も今まで使ったことなかったが、それでも大まかな雰囲気をキャッチアップできるぐらいには非常にまとまっている良いプレゼンテーションだった。
+近年では、TensorFlow.js や TensorFlow Lite などクライアントでMLをするために必要なものが割と整備されてきた印象がある。 クライアントMLのモチベーションとして
+ ネットワークのない環境でも利用できる ネットワークの遅延を気にする必要がなくなる サーバーサイドにデータを送らないため、プライバシーの問題が発生しない 等が挙げられるらしい。  デモでは、GAされたばかりのCloud Run でML用のAPIを作り、披露していた。
+ 今はアノテーションツールとかいうのも充実してるらしく、これはデータに対して正解ラベルを付与するものである。
+山口 能迪 / Goの10年の道のりとその変遷 10周年を迎えたGoの今までとこれからについてのセッションだった。
+ALGOLからCやPASCALなどの言語が生まれ、それらのエンジニアたちが作り上げた言語がGoであること。C++が言語として大きく、ビルドが遅くなってしまったことがGoを作るモチベーションになっていることが説明されていた。
+今より初学者フレンドリーにするためにgo.devが開設されたらしく、ここではA Tour of Goと違い体系的にGoに関する一次情報を得ることができるようだ。</description>
+    </item>
     
     <item>
       <title>コマンドラインのオプションの設計について</title>
