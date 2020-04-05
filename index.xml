@@ -6,10 +6,27 @@
     <description>Recent content on shmokmt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://sh-tech.work/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>社会人2年目になった</title>
+      <link>https://sh-tech.work/post/2020/04/summary_2019/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sh-tech.work/post/2020/04/summary_2019/</guid>
+      <description>社会人2年生になった
+以下は昨年度を通してできるようになったことです
+やったこと / できるようになったこと Python3 たくさん書いた スクリプト/CLIなら人並みにかけるようになりました。 FlaskなどのWebアプリケーション用途では使ってないので、そちらには明るくないです。 Python3 に関しては大体CTOから全部教わりました。
+タスクの依存関係が複雑なバッチ処理をメンテナンスした これが昨年度の自分の主な仕事でした。 怪しい臭いがするところにロギングを仕込んだりするとかはまだまだ自分はきちんとできないので、これからの課題です。
+新型コロナウイルス感染症対策サイトをリリースした 有給期間に帰省してた大分県で集団感染に危機を感じたのがはじまりでした。 いまは有給期間が終わってそんなにコミットできないので、高専生の頃から仲がよかったnojiri1098とissueとPRのメンテナンスをやってくれています。声かけて本当によかったです。 他にも何人かコントリビューションしてくれて、予想よりも本格的なプロジェクトになってしまいました。 このサイトが不要になり、クローズできる日がくることをいち早く望みます。
+ VS Code Meetup で登壇した 勢いで応募しました。自分はそんなに人前で話したりするタイプじゃないので、度胸試しみたいな気持ちで応募しました。 勢いで弊社SlackにもVS Codeユーザが集まるチャンネルを作ったりしました。
+メリット/デメリット考えながらライブラリの選定とかできるようになった 運用時の制約やOSSのメンテナンス具合を考慮してライブラリの選定をできるようになりました。 直近だとPythonの仮想環境&amp;amp;パッケージ管理ツールであるPipenvのメンテナンスが滞ってしまい、Poetryへの移行を検討したりしました。 このような意思決定は実務で運用を経験しないと身につかないスキルだと思います。
+ 一次情報に触れるようになった ビビらずに公式ドキュメントを読むようになりました。 必要に応じてGitHubのissueを開いたりできるようになりました。 あとは、Google翻訳に頼らずに早く英語を読み書きできるようになることが今後の課題です。
+ おわりに ＼( &amp;lsquo;ω&amp;rsquo;)／ウオオオオアアーーーッッ！！！</description>
+    </item>
     
     <item>
       <title>GDG DevFest Tokyo 2019 参加レポート</title>

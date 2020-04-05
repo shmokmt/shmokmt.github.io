@@ -65,7 +65,7 @@
   </div>
   <article>
     <p>※この記事は<a href="https://adventar.org/calendars/4155">フラーAdvent Calendar 2019</a>の12日目です。11日目は<a href="https://twitter.com/okuzawats">@okuzawats</a>さんで<a href="https://allyourbase.hatenablog.com/entry/fuller-advent-calendar-20191211">フラー株式会社でもバグバッシュ大会をやってみた</a>でした。</p>
-<h1 id="heading">はじめに</h1>
+<h1 id="はじめに">はじめに</h1>
 <p>私は業務効率化のためのCLIを実装することが多い。
 いざ実装して使ってみたら直感的に操作しにくいあるいは、理解しにくいなと思うことが度々ある。</p>
 <p>そこで今回はコマンドラインのオプションについて調べてみた。</p>
@@ -87,8 +87,8 @@
 </iframe>
 <h2 id="short-options--long-options">short options / long options</h2>
 <p>多くのオプションは short option と long option を持つ。short option は<strong>利便性</strong>、long option は<strong>可読性</strong>を高める。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@click.command</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hello</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-s</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">--string-to-echo</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@click.command</span>(<span style="color:#e6db74">&#39;hello&#39;</span>)
+<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74">&#39;-s&#39;</span>, <span style="color:#e6db74">&#39;--string-to-echo&#39;</span>)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">echo</span>(string_to_echo):
     click<span style="color:#f92672">.</span>echo(string_to_echo)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$  hello -s okasho
@@ -104,18 +104,18 @@ okasho
 </ul>
 <p>基本的に必須オプション、デフォルト値のどちらかが設定されるべきことが多い。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@click.command</span>()
-<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">--n</span><span style="color:#e6db74">&#39;</span>, default<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74">&#39;--n&#39;</span>, default<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dots</span>(n):
-    click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">*</span> n)
+    click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">*</span> n)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@click.command</span>()
-<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">--n</span><span style="color:#e6db74">&#39;</span>, required<span style="color:#f92672">=</span>True, type<span style="color:#f92672">=</span>int)
+<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74">&#39;--n&#39;</span>, required<span style="color:#f92672">=</span>True, type<span style="color:#f92672">=</span>int)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dots</span>(n):
-    click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">*</span> n)
+    click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#39;.&#39;</span> <span style="color:#f92672">*</span> n)
 </code></pre></div><h2 id="choice-options">choice options</h2>
 <p>取りうる値が限定的である場合はユーザに選択肢を与えるほうがよりユーザーフレンドリーである。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@click.command</span>()
-<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">--office</span><span style="color:#e6db74">&#39;</span>,
-              type<span style="color:#f92672">=</span>click<span style="color:#f92672">.</span>Choice([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">kashiwanoha</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">niigata</span><span style="color:#e6db74">&#39;</span>], required<span style="color:#f92672">=</span>True))
+<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74">&#39;--office&#39;</span>,
+              type<span style="color:#f92672">=</span>click<span style="color:#f92672">.</span>Choice([<span style="color:#e6db74">&#39;kashiwanoha&#39;</span>, <span style="color:#e6db74">&#39;niigata&#39;</span>], required<span style="color:#f92672">=</span>True))
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fuller</span>(office):
     click<span style="color:#f92672">.</span>echo(office)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
@@ -138,12 +138,12 @@ Options:
 <p>Boolean をもたせたいときは以下のようにする。
 ※Flaseのオプション名を付与しないこともできる。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@click.command</span>()
-<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">--dry-run/--no-dry-run</span><span style="color:#e6db74">&#39;</span>, default<span style="color:#f92672">=</span>True)
+<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74">&#39;--dry-run/--no-dry-run&#39;</span>, default<span style="color:#f92672">=</span>True)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delete</span>(dry_run):
     <span style="color:#66d9ef">if</span> dry_run:
-        click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">dry-run mode.</span><span style="color:#e6db74">&#34;</span>)
-    click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Deleting...</span><span style="color:#e6db74">&#34;</span>)
-</code></pre></div><h1 id="heading1">さいごに</h1>
+        click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#34;dry-run mode.&#34;</span>)
+    click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#34;Deleting...&#34;</span>)
+</code></pre></div><h1 id="さいごに">さいごに</h1>
 <p>今回はコマンドラインのオプションの基本的なパターンについて紹介した。</p>
 <p>現代では <a href="https://github.com/aws/aws-cli">aws-cli</a> や <a href="https://cloud.google.com/sdk/gcloud/?hl=ja">gcloud</a> のように多数のサブコマンドを含めたようなCLIも多く、サブコマンドが多くなればなるほどCLIの複雑さは増していくためよりオプション設計が重要になってくる。(※グローバルオプション等)</p>
 <p>コマンドラインやOS、ネットワークなど古き良き技術の設計思想などは現代でも色褪せることなく、私たちに大きな気付きを与えてくれる。</p>
