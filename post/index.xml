@@ -17,11 +17,11 @@
       <pubDate>Sun, 14 Jun 2020 21:00:00 +0900</pubDate>
       
       <guid>https://sh-tech.work/post/2020/06/jupyter-ci/</guid>
-      <description>はじめに Jupyter Notebook の継続的インテグレーションについての記事があまり見当たらなかったので、どんなツールがあるのか調べた。
+      <description>はじめに Jupyter Notebook の継続的インテグレーションでflake8などでいい感じにしたいが、記事があまり見当たらなかったので、どんなツールがあるのか調べた。
 ツール Jupyter Notebookの場合、エディタでlintをかけようとするツールがほとんどでCIでValidationをかけることのできるツールが見当たらない。 とくに使い捨てではなく、それなりにメンテナンスしていく使い方をする場合はエディタのlintだけだと物足りなさを感じる。
  mlshapiro/jupyterlab-flake8 ikegami-yukino/autopep8magic  結論として、GitHub Actionsを使っているのであれば、flake8-jupyter-notebookを使うと良い。 
 既存の類似プロジェクトとしてflake8-nbがある。しかし、リント結果をファイルの行番号ではなく、各セルの行番号で出力し、それがGitHub上のレビューと非常に相性が悪い（.ipynb の実態はJSONファイルである）
-そこで、flake8-jupyter-notebookではセルのソースコードを全て抜き出し、flake8の入力としてパイプで繋いでいる。</description>
+そこで、flake8-jupyter-notebookではセルのソースコードを全て抜き出し、flake8の入力としてパイプで繋いでいる。面白い。</description>
     </item>
     
     <item>

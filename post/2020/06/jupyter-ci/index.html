@@ -65,7 +65,7 @@
   </div>
   <article>
     <h2 id="はじめに">はじめに</h2>
-<p>Jupyter Notebook の継続的インテグレーションについての記事があまり見当たらなかったので、どんなツールがあるのか調べた。</p>
+<p>Jupyter Notebook の継続的インテグレーションでflake8などでいい感じにしたいが、記事があまり見当たらなかったので、どんなツールがあるのか調べた。</p>
 <h3 id="ツール">ツール</h3>
 <p>Jupyter Notebookの場合、エディタでlintをかけようとするツールがほとんどでCIでValidationをかけることのできるツールが見当たらない。
 とくに使い捨てではなく、それなりにメンテナンスしていく使い方をする場合はエディタのlintだけだと物足りなさを感じる。</p>
@@ -79,7 +79,7 @@
     frameborder="0" scrolling="no">
 </iframe></p>
 <p>既存の類似プロジェクトとして<a href="%22https://github.com/s-weigand/flake8-nb%22">flake8-nb</a>がある。しかし、リント結果をファイルの行番号ではなく、各セルの行番号で出力し、それがGitHub上のレビューと非常に相性が悪い（<code>.ipynb</code> の実態はJSONファイルである）</p>
-<p>そこで、flake8-jupyter-notebookではセルのソースコードを全て抜き出し、flake8の入力としてパイプで繋いでいる。</p>
+<p>そこで、flake8-jupyter-notebookではセルのソースコードを全て抜き出し、flake8の入力としてパイプで繋いでいる。面白い。</p>
 <br>
     <div class="social">
     
