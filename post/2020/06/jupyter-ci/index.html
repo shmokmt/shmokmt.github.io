@@ -66,19 +66,19 @@
   <article>
     <h2 id="はじめに">はじめに</h2>
 <p>Jupyter Notebook の継続的インテグレーションについての記事があまり見当たらなかったので、どんなツールがあるのか調べた。</p>
-<h3 id="ツールたち">ツールたち</h3>
+<h3 id="ツール">ツール</h3>
 <p>Jupyter Notebookの場合、エディタでlintをかけようとするツールがほとんどでCIでValidationをかけることのできるツールが見当たらない。
-セルにマジックコマンドを書くことで解決するツールもあるが、PRでレビュワーが全てのセルにマジックコマンドが貼られていることに神経を使うことになり、あまり合理的な解決とは言えない。</p>
+とくに使い捨てではなく、それなりにメンテナンスしていく使い方をする場合はエディタのlintだけだと物足りなさを感じる。</p>
 <ul>
 <li><a href="https://github.com/mlshapiro/jupyterlab-flake8">mlshapiro/jupyterlab-flake8</a></li>
 <li><a href="https://github.com/ikegami-yukino/misc/blob/master/misc/autopep8magic/README.ipynb">ikegami-yukino/autopep8magic</a></li>
 </ul>
-<p>GitHub Actionsを使っているのであれば、flake8-jupyter-notebookを使うと良い。
+<p>結論として、GitHub Actionsを使っているのであれば、flake8-jupyter-notebookを使うと良い。
 <iframe class="hatenablogcard" style="width:100%;height:155px;max-width:420px;"
     src="https://hatenablog-parts.com/embed?url=https%3a%2f%2fgithub.com%2fmhitza%2fflake8-jupyter-notebook" title="" width="300" height="150"
     frameborder="0" scrolling="no">
 </iframe></p>
-<p>前提として、既存のプロジェクトとして<a href="%22https://github.com/s-weigand/flake8-nb%22">flake8-nb</a>がある。しかし、リント結果をファイルの行番号ではなく、各セルの行番号で出力し、それがGitHub上のレビューと非常に相性が悪い（<code>.ipynb</code> の実態はJSONファイルである）</p>
+<p>既存の類似プロジェクトとして<a href="%22https://github.com/s-weigand/flake8-nb%22">flake8-nb</a>がある。しかし、リント結果をファイルの行番号ではなく、各セルの行番号で出力し、それがGitHub上のレビューと非常に相性が悪い（<code>.ipynb</code> の実態はJSONファイルである）</p>
 <p>そこで、flake8-jupyter-notebookではセルのソースコードを全て抜き出し、flake8の入力としてパイプで繋いでいる。</p>
 <br>
     <div class="social">
