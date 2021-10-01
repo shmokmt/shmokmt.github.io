@@ -7,9 +7,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script>
         $(document).ready(function() {
-            console.log(location.pathname)
-            console.log(location.host)
-            window.location.href = 'https://google.com';
+            if (location.pathname == '/') {
+                window.location.href = 'https://google.com';
+            }
         });
     </script>
     <title>Shoma Okamoto</title>
